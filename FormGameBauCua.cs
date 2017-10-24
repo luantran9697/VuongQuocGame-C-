@@ -43,13 +43,13 @@ namespace VuongQuocTroChoi
             if( tienconlai == 0)
             {
                 // nhạc khi thua.
-                SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
+                SoundPlayer loadgame = new SoundPlayer(@"C:\Users\HOME\Desktop\VuongQuocGame_KTPM\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
                 loadgame.Play();
                 if (MessageBox.Show("Tiền cược của bạn đã hết!\n Bạn có muốn chơi lại?", "Thông báo!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     // Load lại nhạc nền
-                    SoundPlayer loadgam = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
+                    SoundPlayer loadgam = new SoundPlayer(@"C:\Users\HOME\Desktop\VuongQuocGame_KTPM\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
                     loadgam.Play();
 
                     tienconlai = 1000;
@@ -119,7 +119,7 @@ namespace VuongQuocTroChoi
         private void FormGameBauCua_Load(object sender, EventArgs e)
         {
             // Nhạc nền game
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
+            SoundPlayer loadgame = new SoundPlayer(@"C:\Users\HOME\Desktop\VuongQuocGame_KTPM\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
             loadgame.Play();
 
             cbchon.SelectedIndex = 0;

@@ -46,3 +46,6 @@ N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.cspr
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+C:\Users\HOME\Desktop\VuongQuocGame_KTPM\bin\Debug\VuongQuocTroChoi.exe.config
+C:\Users\HOME\Desktop\VuongQuocGame_KTPM\obj\Debug\VuongQuocTroChoi.exe
+C:\Users\HOME\Desktop\VuongQuocGame_KTPM\obj\Debug\VuongQuocTroChoi.pdb

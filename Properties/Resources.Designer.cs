@@ -83,6 +83,16 @@ namespace VuongQuocTroChoi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10594081_small {
+            get {
+                object obj = ResourceManager.GetObject("10594081-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _11586074_Beautiful_blossom_cherry_and_butterfly_isolated_on_white_background_Stock_Vector {
             get {
                 object obj = ResourceManager.GetObject("11586074-Beautiful-blossom-cherry-and-butterfly-isolated-on-white-background-Stoc" +
