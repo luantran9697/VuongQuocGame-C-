@@ -1,0 +1,9 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\bin\Debug\Caro.exe.config
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\bin\Debug\Caro.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\bin\Debug\Caro.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.Form1.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Caro\Caro\obj\Debug\Caro.pdb
