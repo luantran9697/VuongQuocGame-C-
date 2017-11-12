@@ -29,63 +29,52 @@
         private void InitializeComponent()
         {
             this.dgvthongke = new System.Windows.Forms.DataGridView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnquay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvthongke)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvthongke
             // 
             this.dgvthongke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvthongke.Location = new System.Drawing.Point(180, 106);
+            this.dgvthongke.Location = new System.Drawing.Point(301, 106);
             this.dgvthongke.Name = "dgvthongke";
-            this.dgvthongke.Size = new System.Drawing.Size(340, 260);
+            this.dgvthongke.Size = new System.Drawing.Size(289, 209);
             this.dgvthongke.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::VuongQuocTroChoi.Properties.Resources._25335771_3d_man_standing_and_holding_magnifying_glass_isolated_over_white__Stock_Photo;
-            this.pictureBox3.Location = new System.Drawing.Point(198, 21);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(97, 79);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::VuongQuocTroChoi.Properties.Resources.Why_is_it_Important_to_Evaluate_the_E_learning;
-            this.pictureBox2.Location = new System.Drawing.Point(526, 243);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 122);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.dgvthongke.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvthongke_CellContentClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::VuongQuocTroChoi.Properties.Resources.a;
-            this.pictureBox1.Location = new System.Drawing.Point(301, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(227, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnquay
+            // 
+            this.btnquay.ForeColor = System.Drawing.Color.Black;
+            this.btnquay.Location = new System.Drawing.Point(595, 25);
+            this.btnquay.Name = "btnquay";
+            this.btnquay.Size = new System.Drawing.Size(66, 24);
+            this.btnquay.TabIndex = 4;
+            this.btnquay.Text = "Quay lại";
+            this.btnquay.UseVisualStyleBackColor = true;
+            this.btnquay.Click += new System.EventHandler(this.btnquay_Click);
+            // 
             // ThongKeKetQua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::VuongQuocTroChoi.Properties.Resources.pattern_flower_pozadia_tapety_vector_zyv0fnu_art_paiting_color_delight_wallpaper1;
+            this.BackgroundImage = global::VuongQuocTroChoi.Properties.Resources._7647100_stock_vector_pirate_cartoon_beach_sign_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(686, 378);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnquay);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvthongke);
             this.Name = "ThongKeKetQua";
@@ -93,8 +82,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThongKeKetQua_FormClosing);
             this.Load += new System.EventHandler(this.ThongKeKetQua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvthongke)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -104,7 +91,6 @@
 
         private System.Windows.Forms.DataGridView dgvthongke;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnquay;
     }
 }

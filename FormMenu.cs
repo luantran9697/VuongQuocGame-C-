@@ -13,6 +13,7 @@ namespace VuongQuocTroChoi
 {
     public partial class FormMenu : Form
     {
+        string chuoiketnoi = @"N:\VuongQuocTroChoi\NhacNen\";
         public FormMenu()
         {
             InitializeComponent();
@@ -22,13 +23,14 @@ namespace VuongQuocTroChoi
         {
 
 
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\NhacNenGamePikachu-VA-4698057.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi + "NhacNenGamePikachu-VA-4698057.wav");
             loadgame.Play();
 
         }
 
         private void btnbaucua_Click(object sender, EventArgs e)
         {
+
             FormGameBauCua fr = new FormGameBauCua();
             this.Hide();
             fr.Show();
@@ -37,20 +39,16 @@ namespace VuongQuocTroChoi
 
         private void btntangbong_Click(object sender, EventArgs e)
         {
+
             FormGameTangBong fr = new FormGameTangBong();
             this.Close();
             fr.Show();
         }
 
-        private void btncaro_Click(object sender, EventArgs e)
-        {
-            GameCaro fr = new GameCaro();
-            this.Close();
-            fr.Show();
-        }
 
         private void btntritue_Click(object sender, EventArgs e)
         {
+
             FormGameTinhToan fr = new FormGameTinhToan();
             this.Close();
             fr.Show();
@@ -58,6 +56,7 @@ namespace VuongQuocTroChoi
 
         private void btnsigout_Click(object sender, EventArgs e)
         {
+
             this.Close();
             DangNhap fr = new DangNhap();
             fr.Show();
@@ -65,7 +64,7 @@ namespace VuongQuocTroChoi
 
         private void btnthongkekqchoi_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ThongKeKetQua f = new ThongKeKetQua();
             f.Show();
         }

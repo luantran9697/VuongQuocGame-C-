@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Media;
+using System.Configuration;
 
 namespace VuongQuocTroChoi
 {
@@ -31,29 +32,30 @@ namespace VuongQuocTroChoi
 
         Random rd = new Random();
         string duongdan = Application.StartupPath + @"\Hinh\";
+        string chuoiketnoi = @"N:\VuongQuocTroChoi\NhacNen\"; // đường dẫn đến nhạc
         int dem = 0;
         int tienconlai = 1000; // lưu số tiền còn lại của người chơi
         int trangthai = 0; // xác định xem kết quả đã save hay chưa.
 
         private SqlConnection cnn = null;
-        private string cnstr = "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
+        private string cnstr = ConfigurationManager.ConnectionStrings["str"].ConnectionString;
         private void btnquay_Click(object sender, EventArgs e)
         {
-            int tien = Convert.ToInt16(txttiencuoc.Text);
+            int tien = Convert.ToInt16(txttiencuoc.SelectedItem.ToString());
             if( tienconlai == 0)
             {
                 // nhạc khi thua.
-                SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
+                SoundPlayer loadgame = new SoundPlayer(chuoiketnoi+ "ChocoboRacingLose-HoaTau-3316610.wav");
                 loadgame.Play();
                 if (MessageBox.Show("Tiền cược của bạn đã hết!\n Bạn có muốn chơi lại?", "Thông báo!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     // Load lại nhạc nền
-                    SoundPlayer loadgam = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
+                    SoundPlayer loadgam = new SoundPlayer(chuoiketnoi + "CungHyCungHyCungHyBan-LongPhieuPhieu-4744108.wav");
                     loadgam.Play();
 
                     tienconlai = 1000;
-                    txttiencuoc.Text = "0";
+                    txttiencuoc.SelectedIndex = 0;
                     cbchon.SelectedIndex = 0;
                     pic1.Image = pic2.Image = pic3.Image = Image.FromFile(duongdan + "0.jpg");
                     lbltienconlai.Text = tienconlai.ToString();
@@ -75,13 +77,13 @@ namespace VuongQuocTroChoi
                     trangthai = 1;
                 }
                 else
-                    txttiencuoc.Text = "0";
+                    txttiencuoc.SelectedIndex = 0;
             }
-            else if( tien == 0)
-            {
-                MessageBox.Show("Bạn chưa nhập tiền cược", "Thông báo!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
+            //else if( tien == 0)
+            //{
+            //    MessageBox.Show("Bạn chưa nhập tiền cược", "Thông báo!", MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
+            //}
             else if (tien > tienconlai)
             {
                 MessageBox.Show("Tiền cược không thể lớn hơn tiền còn lại", "Thông báo!", MessageBoxButtons.OK,
@@ -103,13 +105,13 @@ namespace VuongQuocTroChoi
                     dem++;
                 if (dem == 0)
                 {
-                    tienconlai -= int.Parse(txttiencuoc.Text);
+                    tienconlai -= int.Parse(txttiencuoc.SelectedItem.ToString());
                     lbltienconlai.Text = tienconlai.ToString();
                     dem = 0;
                 }
                 if (dem != 0)
                 {
-                    tienconlai += (dem * int.Parse(txttiencuoc.Text));
+                    tienconlai += (dem * int.Parse(txttiencuoc.SelectedItem.ToString()));
                     lbltienconlai.Text = tienconlai.ToString();
                     dem = 0;
                 }
@@ -119,16 +121,18 @@ namespace VuongQuocTroChoi
         private void FormGameBauCua_Load(object sender, EventArgs e)
         {
             // Nhạc nền game
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\TinhNuNhi-HoaTau-3089111_hq.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi + "CungHyCungHyCungHyBan-LongPhieuPhieu-4744108.wav");
             loadgame.Play();
 
             cbchon.SelectedIndex = 0;
             lbltienconlai.Text = tienconlai.ToString();
-            txttiencuoc.Text = "0";
+            txttiencuoc.SelectedIndex = 0;
         }
 
         private void btnthoat_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             this.Close();
         }
 
@@ -161,6 +165,22 @@ namespace VuongQuocTroChoi
                 fr.Show();
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblthoigian.Text = lblthoigian.Text.Substring(1)
+               + lblthoigian.Text.Substring(0, 1);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbchon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Image.FromFile(duongdan+ cbchon.SelectedIndex.ToString()+".jpg");
         }
     }
 }

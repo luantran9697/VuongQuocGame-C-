@@ -33,6 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -98,12 +100,6 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameCaro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameCaro.Designer.cs">
-      <DependentUpon>GameCaro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThongKeKetQua.cs">
@@ -112,6 +108,7 @@
     <Compile Include="ThongKeKetQua.Designer.cs">
       <DependentUpon>ThongKeKetQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="TinhToanGameTriTue.cs" />
     <EmbeddedResource Include="DangKi.resx">
       <DependentUpon>DangKi.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameCaro.resx">
-      <DependentUpon>GameCaro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -356,6 +350,144 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\240px-Circle-question-red.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\âsa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat-1775692_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\âsa1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat-1775692_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decorative-1301811_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baroque-2859623_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decorative-1301811_960_7201.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decorative-1801462_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\452093533.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat-1775692_960_7202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rkhhvzzl00xd6dffo9ppqpo3fadewyahyaspwhghwisvoww75ydqjcpwvujuqoof-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4520935331.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4520935332.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4520935333.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23435346_1963577063863357_483257431_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23435410_1963577053863358_1770936236_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\91.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23439684_1963586370529093_428159002_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-chuc-tet-20172.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-chuc-tet-20173.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-nen-powerpoint-393.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dfsfsf.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23477054_495467317475424_1249518400_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-dong-17.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decorative-1301811_960_7202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1439869866_thantai-taichinhhanavn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tet-2017-www.myvietnamvisapro.com-Vietnam-visa-during-Tet-Holiday.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mam non tre em mau giao vector png 1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game-gau-con-tang-bong-hinh-anh-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-309024_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7647100_stock-vector-pirate-cartoon-beach-sign-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\be-hoc-toan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\be-hoc-toan1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

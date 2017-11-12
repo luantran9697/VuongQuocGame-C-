@@ -46,3 +46,76 @@ N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.cspr
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
 N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+E:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe.config
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.exe
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.pdb
+G:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe.config
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.exe
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.pdb
+G:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe
+G:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.pdb
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csprojResolveAssemblyReference.cache
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangKi.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangNhap.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Form1.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameBauCua.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTangBong.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTinhToan.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormMenu.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.GameCaro.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Properties.Resources.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+G:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csproj.GenerateResource.Cache
+D:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe.config
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.exe
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.pdb
+D:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe
+D:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.pdb
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csprojResolveAssemblyReference.cache
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangKi.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangNhap.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Form1.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameBauCua.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTangBong.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTinhToan.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormMenu.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Properties.Resources.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+D:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csproj.GenerateResource.Cache
+E:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe
+E:\ \VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.pdb
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csprojResolveAssemblyReference.cache
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangKi.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangNhap.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Form1.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameBauCua.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTangBong.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTinhToan.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormMenu.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Properties.Resources.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+E:\ \VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csproj.GenerateResource.Cache
+N:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe.config
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.exe
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.pdb
+N:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.exe
+N:\VuongQuocTroChoi\bin\Debug\VuongQuocTroChoi.pdb
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csprojResolveAssemblyReference.cache
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangKi.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.DangNhap.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Form1.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameBauCua.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTangBong.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormGameTinhToan.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongGameTangBong.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormKhoiDongHeThong.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.FormMenu.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.Properties.Resources.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.ThongKeKetQua.resources
+N:\VuongQuocTroChoi\obj\Debug\VuongQuocTroChoi.csproj.GenerateResource.Cache

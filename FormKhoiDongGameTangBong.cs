@@ -23,24 +23,7 @@ namespace VuongQuocTroChoi
 
         }
 
-        private void FormKhoiDongGameTangBong_Paint(object sender, PaintEventArgs e)
-        {
-            Rectangle rect = new Rectangle(0, 0, ClientRectangle.Width, ClientRectangle.Height);
 
-            HatchBrush hb = new HatchBrush(HatchStyle.DarkUpwardDiagonal, Color.Pink, Color.White);
-            e.Graphics.FillRectangle(hb, ClientRectangle);
-
-            SolidBrush slb = new SolidBrush(Color.Black);
-            string str = "Tâng Bóng";
-            Font font = new Font("chiller", 38, FontStyle.Bold);
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
-            format.LineAlignment = StringAlignment.Center;
-            e.Graphics.DrawString(str, font, slb, rect, format);
-            rect.X -= 2;
-            rect.Y -= 3;
-            e.Graphics.DrawString(str, font, new SolidBrush(Color.BlueViolet), rect, format);
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -49,6 +32,12 @@ namespace VuongQuocTroChoi
             {
                 timer1.Stop();
             }
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
+using System.Configuration;
 
 namespace VuongQuocTroChoi
 {
@@ -18,16 +20,14 @@ namespace VuongQuocTroChoi
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblthoigian.Text = lblthoigian.Text.Substring(1)
-               + lblthoigian.Text.Substring(0, 1);
-        }
+       
         SqlConnection cnn = null;
-        string cnstr = "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
-
+        string cnstr = ConfigurationManager.ConnectionStrings["str"].ConnectionString;
+        string chuoiketnoi = @"N:\VuongQuocTroChoi\NhacNen\";
         private void btndangki_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             cnn = new SqlConnection(cnstr);
             cnn.Open();
             string sql = "select * from DangKiTaiKhoan";
@@ -37,10 +37,11 @@ namespace VuongQuocTroChoi
 
             int trangthai = 0; // tai khoan chua duoc dang ki
             if (txttendangki.Text == "" || txtpassdangki.Text == "" || txtho.Text == "" || txtten.Text == "" || txtsdt.Text == "" || txtdiachi.Text == "")
-            {
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin để đăng kí", "Thông báo", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            }
+            else if(txtpassdangki.Text.Length < 8)
+                MessageBox.Show("Mật khẩu ít nhất 8 kí tự", "Thông báo", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
             else
             {
 
@@ -76,12 +77,26 @@ namespace VuongQuocTroChoi
                 }
                 else if (trangthai == 1)
                 {
-                    MessageBox.Show("Tài khoản đã được đăng kí !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tên tài khoản đã được đăng kí !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
         private void DangKi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
+            DangNhap dn = new DangNhap();
+            this.Hide();
+            dn.ShowDialog();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Media;
+using System.Configuration;
 
 namespace VuongQuocTroChoi
 {
@@ -34,17 +36,22 @@ namespace VuongQuocTroChoi
         }
 
         SqlConnection cnn = null;
-        string cnstr= "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
+        string cnstr= ConfigurationManager.ConnectionStrings["str"].ConnectionString;
         private void btnsigup_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             DangKi dk = new DangKi();
             this.Hide();
             dk.Show();
         }
 
         public static string id="";
+        string chuoiketnoi = @"N:\\VuongQuocTroChoi\NhacNen\";
         private void btnsigin_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             cnn = new SqlConnection(cnstr);
             string sql = "select TenDangNhap, Password from DangKiTaiKhoan";
 

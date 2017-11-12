@@ -17,7 +17,7 @@ namespace VuongQuocTroChoi
  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGameBauCua()); // goi form DangNHap
+            Application.Run(new DangNhap()); // goi form DangNHap
       
         }
     }

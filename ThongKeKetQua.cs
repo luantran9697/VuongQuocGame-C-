@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace VuongQuocTroChoi
 {
@@ -19,7 +20,7 @@ namespace VuongQuocTroChoi
         }
 
         private SqlConnection cnn = null;
-        private string cnstr = "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
+        private string cnstr = ConfigurationManager.ConnectionStrings["str"].ConnectionString;
         private void ThongKeKetQua_Load(object sender, EventArgs e)
         {
            
@@ -53,6 +54,18 @@ namespace VuongQuocTroChoi
             this.Hide();
             FormMenu f = new FormMenu();
             f.Show();
+        }
+
+        private void dgvthongke_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnquay_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormMenu mn = new FormMenu();
+            mn.Show();
         }
     }
 }

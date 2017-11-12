@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Media;
+using System.Configuration;
 
 namespace VuongQuocTroChoi
 {
@@ -35,14 +36,14 @@ namespace VuongQuocTroChoi
         int dx = 7, dy = 10;
         string duongdan = Application.StartupPath + @"\nhanvat\";
         int trangthai = 0;
-
+        string chuoiketnoi = @"N:\VuongQuocTroChoi\NhacNen\";
         private SqlConnection cnn = null;
-        private string cnstr = "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
+        private string cnstr = ConfigurationManager.ConnectionStrings["str"].ConnectionString;
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (picbanh.Left < 0 || picbanh.Right > ClientRectangle.Width)
                 dx = -dx;
-            if (picbanh.Top < 75) // !!!!!!!!!!
+            if (picbanh.Top < 95) // !!!!!!!!!!
                 dy = -dy;
             if ((picbanh.Bottom > picdobanh.Top) && ((picbanh.Right > picdobanh.Left) && (picbanh.Left < picdobanh.Right)))
             {
@@ -55,7 +56,7 @@ namespace VuongQuocTroChoi
                 timer1.Stop();
 
                 // Nhac khi thua.
-                SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
+                SoundPlayer loadgame = new SoundPlayer(chuoiketnoi + "ChocoboRacingLose-HoaTau-3316610.wav");
                 loadgame.Play();
 
 
@@ -63,7 +64,6 @@ namespace VuongQuocTroChoi
                 btntieptuc.Enabled = false;
                 btntamdung.Enabled = false;
                 /////// Luu ket qua choi
-               // DangNhap dn = new DangNhap();
                 cnn = new SqlConnection(cnstr);
                 cnn.Open();
                 string sql = "select * from ThongKeKetQua";
@@ -102,6 +102,7 @@ namespace VuongQuocTroChoi
 
         private void btnbatdau_Click(object sender, EventArgs e)
         {
+  
             if (cbdokho.SelectedIndex == 0)
             {
                 dx = 7;
@@ -141,13 +142,13 @@ namespace VuongQuocTroChoi
             btntieptuc.Enabled = false;
             btnchoilai.Enabled = false;
 
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\KanashimiWoYasashisaNi-LittleByLittle-2859423.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi+"KanashimiWoYasashisaNi-LittleByLittle-2859423.wav");
             loadgame.Play();
             
         }
 
         private void btntamdung_Click(object sender, EventArgs e)
-        {
+        { 
             timer1.Stop();
             btnbatdau.Enabled = false;
             btntamdung.Enabled = false;
@@ -186,6 +187,7 @@ namespace VuongQuocTroChoi
 
         private void btnthoat_Click(object sender, EventArgs e)
         {
+
             this.Close();
 
         }
@@ -245,6 +247,8 @@ namespace VuongQuocTroChoi
 
         private void btnchoilai_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             ketqua = 0;
             cbdokho.SelectedIndex = 0;
             cbnhanvat.SelectedIndex = 0;
@@ -255,7 +259,7 @@ namespace VuongQuocTroChoi
             picbanh.Left = 175;
             picbanh.Top = 100;
 
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\KanashimiWoYasashisaNi-LittleByLittle-2859423.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi+"KanashimiWoYasashisaNi-LittleByLittle-2859423.wav");
             loadgame.Play();
         }
  

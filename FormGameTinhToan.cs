@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,23 +21,24 @@ namespace VuongQuocTroChoi
         }
 
         Random rd = new Random();
-        double so1;
+        double so1 ;
         double so2;
         int dau; // lưu dấu
-        int diem = 0; // lưu số câu trả lời đúng
-        double kqTamThoi ;
+        int diem ; // lưu số câu trả lời đúng
+        double kqTamThoi; // Lưu kết quả tam thời.
         int laydungsai; // lấy ngẫu nhiên 1 đúng sai khi ra 1 câu hỏi.
+        string chuoiketnoi = @"N:\VuongQuocTroChoi\NhacNen\";
         private void FormGameTinhToan_Load(object sender, EventArgs e)
         {
             // Load nhac nen
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\RenaiCirculation-HanazawaKana_36x8x.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi + "RenaiCirculation-HanazawaKana_36x8x.wav");
             loadgame.Play();
 
-           
-            lbldiem.Text = "0";
+
+            lbldiem.Text = diem.ToString();
             // lấy random ngãu nhiên số và dấu
-            so1 = rd.Next(1, 999);
-            so2 = rd.Next(1, 999);
+            so1 = rd.Next(1, 500);
+            so2 = rd.Next(1, 500);
             dau = rd.Next(4);
 
             // gán giá trị cho số và dấu vào các control.
@@ -50,28 +52,29 @@ namespace VuongQuocTroChoi
         }
 
         // trả về dấy sau khi lấy random.
-        private string Dau(int d)
+        public string Dau(int d)
         {
-            switch (d)
-            {
-                case 0: return lbldau.Text = "+";
-                case 1: return lbldau.Text = "-";
-                case 2: return lbldau.Text = "x";
-                case 3: return lbldau.Text = "/";
-            }
-            return " ";
+            if (d == 0)
+                return "+";
+            else if (dau == 1)
+                return "-";
+            else if (dau == 2)
+                return "x";
+            else 
+                return "/";
         }
 
-        private double ketQuaDung()
+        public double ketQuaDung()
         {
-            if (dau == 0)
-                return this.so1 + this.so2;
-            if (dau == 1)
-                return this.so1 - this.so2;
-            if (dau == 2)
-                return this.so1 * this.so2;
-            if (dau == 3)
-                return this.so1 / this.so2;
+            string daulayduoc = Dau(dau);
+            if (daulayduoc == "+")
+                return so1 + so2;
+            if (daulayduoc == "-")
+                return so1 - so2;
+            if (daulayduoc == "x")
+                return so1 * so2;
+            if (daulayduoc == "/")
+                return so1 / so2;
             return 0;
         }
 
@@ -82,7 +85,7 @@ namespace VuongQuocTroChoi
         }
 
         private SqlConnection cnn = null;
-        private string cnstr = "Server = DESKTOP-0KSPLP6\\SQLEXPRESS; Database = VuongQuocTroChoi; Integrated security = true; ";
+        private string cnstr = ConfigurationManager.ConnectionStrings["str"].ConnectionString;
         int trangthai = 0; // kiểm tra xem đã lưu kết quả chưa.
         private void btnsai_Click(object sender, EventArgs e)
         {
@@ -90,12 +93,13 @@ namespace VuongQuocTroChoi
             if (a == kqTamThoi)
             {
                 // Nhac khi thua.
-                SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
-                loadgame.Play();
+                SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "fail-trombone-01.wav");
+                loadgames.Play();
 
-                MessageBox.Show("Chọn sai rồi nhé! \n Số câu trả lời đúng của bạn là: "+diem, "Thông báo",
+                MessageBox.Show("Chọn sai rồi nhé! \n Số câu trả lời đúng của bạn là: " + diem, "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btndung.Enabled = btnsai.Enabled = false;
+                //diem = 0; // cap nhat lai diem khi cho lai
 
                 //Lưu kết quả khi kết thúc game
                 cnn = new SqlConnection(cnstr);
@@ -111,30 +115,33 @@ namespace VuongQuocTroChoi
                 ds.Tables[0].Rows.Add(dr);
                 SqlCommandBuilder cm = new SqlCommandBuilder(ad);
                 ad.Update(ds);
-                diem = 0; // cap nhat lai diem khi cho lai
                 trangthai = 1;
             }
+            else
+            {
                 diem++;
                 lbldiem.Text = diem.ToString();
-                so1 = rd.Next(1, 999);
-                so2 = rd.Next(1, 999);
+                so1 = rd.Next(1, 500);
+                so2 = rd.Next(1, 500);
                 dau = rd.Next(4);
                 lblso1.Text = so1.ToString();
                 lblso2.Text = so2.ToString();
                 string layDau = Dau(dau);
                 lbldau.Text = layDau;
-                laydungsai = rd.Next(0,2);
+                laydungsai = rd.Next(0, 4);
                 double b = 0;
                 if (laydungsai % 2 == 0)
                 {
                     b = ketQuaDung();
                     lblketqua.Text = b.ToString();
+                    kqTamThoi = ketQuaDung();
                 }
                 else
                 {
                     b = rd.Next(0, 99999);
                     lblketqua.Text = b.ToString();
                 }
+            }
 
         }
 
@@ -143,11 +150,12 @@ namespace VuongQuocTroChoi
             double a = ketQuaDung();
             if( a == kqTamThoi)
             {
+                
                 diem++;
                 lbldiem.Text = diem.ToString();
 
-                so1 = rd.Next(1, 999);
-                so2 = rd.Next(1, 999);
+                so1 = rd.Next(1, 500);
+                so2 = rd.Next(1, 500);
                 dau = rd.Next(4);
 
                 lblso1.Text = so1.ToString();
@@ -155,7 +163,7 @@ namespace VuongQuocTroChoi
                 string layDau = Dau(dau);
                 lbldau.Text = layDau;
 
-                laydungsai = rd.Next(0,2);
+                laydungsai = rd.Next(0,4);
                 if(laydungsai % 2 == 0)
                 {
                     kqTamThoi = ketQuaDung();
@@ -172,7 +180,7 @@ namespace VuongQuocTroChoi
             else
             {
                 // Nhac khi thua.
-                SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\ChocoboRacingLose-HoaTau-3316610.wav");
+                SoundPlayer loadgame = new SoundPlayer(chuoiketnoi+ "fail-trombone-01.wav");
                 loadgame.Play();
                 MessageBox.Show("Chọn sai rồi nhé!\n Số câu trả lời đúng của bạn là: " + diem ,"Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -192,7 +200,6 @@ namespace VuongQuocTroChoi
                 ds.Tables[0].Rows.Add(dr);
                 SqlCommandBuilder cm = new SqlCommandBuilder(ad);
                 ad.Update(ds);
-                diem = 0;
                 trangthai = 1;
             }
         }
@@ -200,11 +207,14 @@ namespace VuongQuocTroChoi
         private void button1_Click(object sender, EventArgs e)
         {
             // Load nhac nen
-            SoundPlayer loadgame = new SoundPlayer(@"N:\IT\Kiểm thử phần mềm\VuongQuocTroChoi\NhacNen\RenaiCirculation-HanazawaKana_36x8x.wav");
+         
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            SoundPlayer loadgame = new SoundPlayer(chuoiketnoi+ "RenaiCirculation-HanazawaKana_36x8x.wav");
+            loadgames.Play();
             loadgame.Play();
-
             // Gán lại giá trị khi chơi lại
             timer1.Start();
+            diem = 0;
             btndung.Enabled = btnsai.Enabled = true;
             lbldiem.Text = "0";
             so1 = rd.Next(1, 999);
@@ -220,6 +230,8 @@ namespace VuongQuocTroChoi
 
         private void btnthoat_Click(object sender, EventArgs e)
         {
+            SoundPlayer loadgames = new SoundPlayer(chuoiketnoi + "button-3.wav");
+            loadgames.Play();
             this.Close();
 
         }
@@ -252,6 +264,11 @@ namespace VuongQuocTroChoi
                 FormMenu fr = new FormMenu();
                 fr.Show();
             }
+        }
+
+        private void lblthoigian_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
